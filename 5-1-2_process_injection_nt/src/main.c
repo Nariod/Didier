@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <windows.h>
-#include <tlhelp32.h> //needed for find_process
+#include <tlhelp32.h>
 
 // thanks to https://github.com/AlionGreen/remote-thread-injection/blob/main/win32api/main.c
 DWORD find_process(char *process_name){
